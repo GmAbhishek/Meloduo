@@ -14,6 +14,7 @@ import Home from './Home.js'
 import MyTokens from './MyTokens.js'
 import MyResales from './MyResales.js'
 import './App.css';
+import MetamaskLogo from './MetamaskLogo';
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -37,12 +38,12 @@ function App() {
   }
   
     const navbarStyle = {
-      backgroundColor: '#383838', // Lavender color code
+      backgroundColor: 'transparent', // Lavender color code
     }
   
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" >
         <>
         <Navbar expand="lg" style={navbarStyle} variant="dark">
             <Container>
@@ -79,10 +80,13 @@ function App() {
         </>
         <div>
           {loading ? (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
-              <loader/>
-              <p className='mx-3 my-0'>Awaiting Metamask Connection...</p>
-            </div>
+            <div style={{  }}>
+            <MetamaskLogo style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '800vh' }}/>
+  <p className='mx-3 my-0' style={{ color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '0vh' }}>Awaiting Metamask Connection...</p>
+</div>
+
+
+
           ) : (
             <Routes>
               <Route path="/" element={

@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { ethers } from "ethers"
-import Identicon from 'identicon.js';
 import { Row, Col, Card, Button, InputGroup, Form } from 'react-bootstrap'
 import Loader from './loader';
+import monkeyImage from './monkey.png';
+
 
 export default function MyTokens({ contract }) {
   const audioRefs = useRef([]);
@@ -22,7 +23,11 @@ export default function MyTokens({ contract }) {
       // use uri to fetch the nft metadata stored on ipfs 
       const response = await fetch(uri + ".json")
       const metadata = await response.json()
-      const identicon = `data:image/png;base64,${new Identicon(metadata.name + metadata.price, 330).toString()}`
+      const md5 = require('blueimp-md5'); // You'll need to install this package using npm or yarn.
+
+const nameAndPrice = metadata.name + metadata.price;
+const hash = md5(nameAndPrice); 
+      const identicon = `https://robohash.org/${hash}.png?size=330x330`
       // define item object
       let item = {
         price: i.price,
@@ -75,8 +80,8 @@ export default function MyTokens({ contract }) {
             {myTokens.map((item, idx) => (
               <Col key={idx} className="overflow-hidden">
                 <audio src={item.audio} key={idx} ref={el => audioRefs.current[idx] = el}></audio>
-                <Card>
-                  <Card.Img variant="top" src={item.identicon} />
+                <Card style={{ background: "transparent" }}>
+                  <Card.Img variant="top" src={item.identicon} style={{ background: "white", borderRadius: "50px"}}/>
                   <Card.Body color="secondary">
                     <Card.Title>{item.name}</Card.Title>
                     <div className="d-grid px-4">
@@ -123,9 +128,12 @@ export default function MyTokens({ contract }) {
           </Row>
         </div>
         : (
-          <main style={{ padding: "1rem 0" }}>
-            <h2>No owned tokens</h2>
-          </main>
+          <div class="bobo">
+  <main style={{ padding: "1rem 0", textAlign: "center" }}>
+    <img src={monkeyImage} alt="Monkey" style={{ width: "120px", height: "120px" }} />
+    <h2 style={{ color: "white" }}>No owned tokens</h2>
+  </main>
+</div>
         )}
     </div>
   );

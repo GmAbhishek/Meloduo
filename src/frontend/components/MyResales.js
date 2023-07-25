@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { ethers } from "ethers"
 import { Row, Col, Card, Button } from 'react-bootstrap'
-import Identicon from 'identicon.js';
+
 import Loader from './loader';
+import monkeyImage from './monkey.png';
 
 export default function MyResales({ contract, account }) {
   const audioRefs = useRef([]);
@@ -25,7 +26,11 @@ export default function MyResales({ contract, account }) {
       // use uri to fetch the nft metadata stored on ipfs 
       const response = await fetch(uri + ".json")
       const metadata = await response.json()
-      const identicon = `data:image/png;base64,${new Identicon(metadata.name + metadata.price, 330).toString()}`
+      const md5 = require('blueimp-md5'); // You'll need to install this package using npm or yarn.
+
+const nameAndPrice = metadata.name + metadata.price;
+const hash = md5(nameAndPrice); 
+      const identicon = `https://robohash.org/${hash}.png?size=330x330`
       // define listed item object
       let purchasedItem = {
         price: i.price,
@@ -76,9 +81,9 @@ export default function MyResales({ contract, account }) {
               {listedItems.map((item, idx) => (
                 <Col key={idx} className="overflow-hidden">
                   <audio src={item.audio} ref={el => audioRefs.current[idx] = el}></audio>
-                  <Card>
-                    <Card.Img variant="top" src={item.identicon} />
-                    <Card.Body color="secondary">
+                  <Card style={{ backgroundColor: "transparent" }}>
+                    <Card.Img variant="top" src={item.identicon} style={{ background: "white", borderRadius: "50px"}}/>
+                    <Card.Body >
                       <Card.Title>{item.name}</Card.Title>
                       <div className="d-grid px-4">
                         <Button variant="secondary" onClick={() => {
@@ -113,7 +118,7 @@ export default function MyResales({ contract, account }) {
                     <Col key={idx} className="overflow-hidden">
                       <Card>
                         <Card.Img variant="top" src={item.identicon} />
-                        <Card.Body color="secondary">
+                        <Card.Body style={{ backgroundColor: "transparent" }}>
                           <Card.Title>{item.name}</Card.Title>
                           <Card.Text className="mt-1">
                             {ethers.utils.formatEther(item.price)} ETH
@@ -131,9 +136,13 @@ export default function MyResales({ contract, account }) {
             </>
           </div>
           : (
-            <main style={{ padding: "1rem 0" }}>
-              <h2>No listed assets</h2>
-            </main>
+            <div class="bobo">
+  <main style={{ padding: "1rem 0", textAlign: "center" }}>
+    <img src={monkeyImage} alt="Monkey" style={{ width: "120px", height: "120px" }} />
+    <h2 style={{ color: "white" }}> No listed assets</h2>
+  </main>
+</div>
+           
           )}
       </div>
     </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
 import { ethers } from "ethers"
-import Identicon from 'identicon.js';
 import { Card, Button, ButtonGroup } from 'react-bootstrap'
 import Loader from './loader';
 
@@ -19,7 +18,11 @@ const Home = ({ contract }) => {
       // use uri to fetch the nft metadata stored on ipfs 
       const response = await fetch(uri + ".json")
       const metadata = await response.json()
-      const identicon = `data:image/png;base64,${new Identicon(metadata.name + metadata.price, 330).toString()}`
+      const md5 = require('blueimp-md5'); // You'll need to install this package using npm or yarn.
+
+const nameAndPrice = metadata.name + metadata.price;
+const hash = md5(nameAndPrice); 
+      const identicon = `https://robohash.org/${hash}.png?size=330x330`
       // define item object
       let item = {
         price: i.price,
@@ -86,9 +89,12 @@ const Home = ({ contract }) => {
           <main role="main" className="col-lg-12 mx-auto" style={{ maxWidth: '500px' }}>
             <div className="content mx-auto">
               <audio src={marketItems[currentItemIndex].audio} ref={audioRef}></audio>
-              <Card>
+              <Card style={{ background: "transparent" }}>
                 <Card.Header>{currentItemIndex + 1} of {marketItems.length}</Card.Header>
-                <Card.Img variant="top" src={marketItems[currentItemIndex].identicon} />
+                <Card.Img  variant="top"
+  src={marketItems[currentItemIndex].identicon}
+  style={{ background: "white", borderRadius: "50px"}}/>
+
                 <Card.Body color="secondary">
                   <Card.Title as="h2" > {marketItems[currentItemIndex].name}</Card.Title>
                   <div className="d-grid px-4">
