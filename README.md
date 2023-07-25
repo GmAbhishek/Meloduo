@@ -108,6 +108,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you have any questions or feedback, please feel free to reach out to us:
 
 - Email: gmabhishek.dev@gmail.com
-- Twitter: [@EchoeOfAbyss]([https://twitter.com/EchoeOfAbyss](https://twitter.com/Gm_Abhishek_))
+- Twitter: [@EchoeOfAbyss](https://twitter.com/Gm_Abhishek_)
 
 Thank you for your interest in Echoe of Abyss! We hope you enjoy the music NFT marketplace experience.
