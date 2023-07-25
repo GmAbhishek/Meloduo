@@ -1,8 +1,7 @@
 **Echoe of Abyss - Music NFT Marketplace**
 
-<!-- HTML Comment: The following code will resize the image to a width of 300 pixels -->
+<img src="https://bafybeigj7qil5vgrhjmssissd24fdq3cpexmfadbzmn3pf4jlerknnkyxa.ipfs.nftstorage.link/final.png" width="300" style="border-radius: 50;">
 
-<img src="https://bafybeigj7qil5vgrhjmssissd24fdq3cpexmfadbzmn3pf4jlerknnkyxa.ipfs.nftstorage.link/final.png" width="300">
 
 
 ## Table of Contents
@@ -46,34 +45,41 @@ Check out the live demo of Echoe of Abyss: [DEMO🚀](https://meloduo-167622.sph
 
 Follow these steps to set up the project locally:
 
-1. Clone the repository:
+###1. Clone the repository:
 
 ```
 git clone https://github.com/your-username/echoe-of-abyss.git
 ```
 
-2. Install dependencies:
+###2. Install dependencies:
 
 ```
 cd echoe-of-abyss
 npm install
 ```
 
-3. Configure the project with your local development environment and blockchain network settings.
+###3. Configure the project with your local development environment and blockchain network settings.
 
-4. Deploy the smart contracts using Hardhat:
-
+###4. Boot up local development blockchain
 ```
-npx hardhat run scripts/deploy.js
-```
-
-5. Start the frontend development server:
-
-```
-npm start
+$ cd music_nfts
+$ npx hardhat node
 ```
 
-6. Visit `http://localhost:3000` to access the Echoe of Abyss website.
+###5. Connect development blockchain accounts to Metamask
+- Copy private key of the addresses and import to Metamask
+- Connect your metamask to hardhat blockchain, network 127.0.0.1:8545.
+- If you have not added hardhat to the list of networks on your metamask, open up a browser, click the fox icon, then click the top center dropdown button that lists all the available networks then click add networks. A form should pop up. For the "Network Name" field enter "Hardhat". For the "New RPC URL" field enter "http://127.0.0.1:8545". For the chain ID enter "31337". Then click save.  
+
+### 6. Run deploy script to migrate smart contracts
+`npm run deploy`
+
+### 7. Run Tests
+`$ npx hardhat test`
+
+### 8. Launch Frontend
+`$ npm run start`
+###9. Visit `http://localhost:3000` to access the Echoe of Abyss website.
 
 ## Usage
 
