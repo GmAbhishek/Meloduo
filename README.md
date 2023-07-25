@@ -1,6 +1,6 @@
 **Echoe of Abyss - Music NFT Marketplace**
 
-<div style="width: 300px; border-radius: 50px; overflow: hidden;">
+<div style="width: 300px; display: flex; justify-content: center; align-items: center;">
   <img src="https://bafybeiejor57trm65vqk4m5wptfqu3dwhqw4efvyo35ry34pbxk5mowjay.ipfs.nftstorage.link/git.png" width="300" alt="Echoe of Abyss">
 </div>
 
