@@ -1,6 +1,6 @@
 **Echoe of Abyss - Music NFT Marketplace**
 
-![Echoe of Abyss](https://your-image-url.com)
+![Echoe of Abyss](https://github.com/GmAbhishek/Meloduo/blob/main/src/frontend/components/logo.png)
 
 ## Table of Contents
 
