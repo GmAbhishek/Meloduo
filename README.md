@@ -1,6 +1,6 @@
 **Echoe of Abyss - Music NFT Marketplace**
 
-![Echoe of Abyss](https://github.com/GmAbhishek/Meloduo/blob/main/src/frontend/components/logo.png)
+![Echoe of Abyss](https://bafybeigj7qil5vgrhjmssissd24fdq3cpexmfadbzmn3pf4jlerknnkyxa.ipfs.nftstorage.link/final.png)
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ Echoe of Abyss is a revolutionary music NFT marketplace that empowers artists an
 
 ## Demo
 
-Check out the live demo of Echoe of Abyss: [https://meloduo-167622.spheron.app](https://meloduo-167622.spheron.app)
+Check out the live demo of Echoe of Abyss: [DEMO🚀](https://meloduo-167622.spheron.app)
 
 ## Features
 
