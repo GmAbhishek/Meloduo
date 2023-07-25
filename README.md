@@ -1,6 +1,9 @@
 **Echoe of Abyss - Music NFT Marketplace**
 
-![Echoe of Abyss](https://bafybeigj7qil5vgrhjmssissd24fdq3cpexmfadbzmn3pf4jlerknnkyxa.ipfs.nftstorage.link/final.png)
+<!-- HTML Comment: The following code will resize the image to a width of 300 pixels -->
+
+<img src="https://bafybeigj7qil5vgrhjmssissd24fdq3cpexmfadbzmn3pf4jlerknnkyxa.ipfs.nftstorage.link/final.png" width="300">
+
 
 ## Table of Contents
 
@@ -98,7 +101,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or feedback, please feel free to reach out to us:
 
-- Email: contact@echoeofabyss.com
-- Twitter: [@EchoeOfAbyss](https://twitter.com/EchoeOfAbyss)
+- Email: gmabhishek.dev@gmail.com
+- Twitter: [@EchoeOfAbyss]([https://twitter.com/EchoeOfAbyss](https://twitter.com/Gm_Abhishek_))
 
 Thank you for your interest in Echoe of Abyss! We hope you enjoy the music NFT marketplace experience.
